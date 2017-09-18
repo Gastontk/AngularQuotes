@@ -1,0 +1,109 @@
+
+<!-- <button (click) = 'testClickQuote()' >test</button> -->
+
+<div id = 'formDiv'>
+  <h1  [ngClass]="{ 'red': 'true', 'green': 'false'}" >Add a Quote</h1>
+  	<div class='validations'>
+		<div *ngIf = 'text.errors; else looksgood'>
+		<ng-template #looksgood>asdfasdffsa</ng-template>
+		<span *ngIf="text.errors && text.errors.required" class='Quote, red'>You must provide a quote.</span> 
+
+		 <span *ngIf="text.errors && text.errors.minlength" class='Quote, red'>The quote must be at least 4 characters.</span>
+		</div>
+		<ng-template #looksgood> <span class = 'green'>Looks Good!</span> </ng-template>	
+	</div><br>
+  <form class = 'quoteForm' #formData="ngForm"   (submit) = 'submitForm($event)'>
+	<!-- hidden input -->
+	<input [hidden]='true' type="number" val ='3'[(ngModel)] = 'quote._id' #_id = "ngModel" name = '_id'>
+
+      <textarea  [(ngModel)]="quote.text"  #text = "ngModel" name="text" cols="50" rows="15" required minlength='3'></textarea><br>
+
+
+
+
+<!-- restore after bugshoot -->
+<!-- 	<div class='validations'>
+		<div *ngIf = 'text.errors; else looksgood'>
+		<ng-template #looksgood>asdfasdffsa</ng-template>
+		<span *ngIf="text.errors && text.errors.required" class='Quote, red'>You must provide a quote.</span> 
+
+		 <span *ngIf="text.errors && text.errors.minlength" class='Quote, red'>The quote must be at least 4 characters.</span>
+		</div>
+		<ng-template #looksgood> <span class = 'green'>Looks Good!</span> </ng-template>	
+	</div><br> -->
+
+
+
+
+	   <label [ngClass]="{'green':'true'}"for="">Author</label> <br>
+		<div class = 'validationsLower' *ngIf='author.errors; else looksgood'>
+			<span *ngIf="author.errors.required" class='Author, red' Required >Author is required.</span>
+			<span *ngIf="author.errors.minlength" class='Author, red' Required >At least 2 initials please.</span>
+
+		</div>
+       <br> <input type="text" name='author' [(ngModel)]="quote.author"  #author = 'ngModel' required minlength='2'>
+      <input [disabled] = '!text.valid || !author.valid' class = 'inputButton' type="submit" value ='submit quote'> <br>
+
+
+<!-- 	<div class = 'validationsLower' *ngIf='author.errors; else looksgood'>
+		<span *ngIf="author.errors.required" class='Author, red' Required >Author is required.</span>
+		<span *ngIf="author.errors.minlength" class='Author, red' Required >At least 2 initials please.</span>
+
+	</div> -->
+
+  </form>
+<!-- 	<div class='validations'>
+		<div>
+		 <span *ngIf="text.errors.minlength" class='Quote, red'>The quote must be at least 4 characters.</span>
+		 <span *ngIf="text.errors.required" class='Quote, red'>You must provide a quote.</span> 
+		</div>
+	</div> -->
+<!-- 		  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+
+
+
+<!-- Restore!!! -->
+
+
+</div>
+<!-- testing binding of quote -->
+<!-- {{quote | json}} -->
+<!-- <div>
+	{{quotes | json}}
+</div> -->
+
+
+
+
+<app-quotes-list (aTaskEventEmitterB)="btnPressA($event)"   [quotes] = 'quotes'
+(sendToQuoteEmitter) ='testClickQuote(data)'
+(downvoteToQuotes)='btnPressB($event)'
+(deleteToQuotes) = 'btnPressC($event)'
+
+
+></app-quotes-list>
+
+
+
+
+<!-- 
+<div class='inputs'>
+    <form (submit)="onSubmit(formData)" #formData="ngForm">
+      <textarea 
+      [(ngModel)]="newQuote.body"
+      required
+      name='body'
+      minlength="3"
+      #body="ngModel"
+      cols="30" rows="2"></textarea>
+      <input 
+      [(ngModel)]="newQuote.author"
+      required
+      name='author'
+      minlength="2"
+      #author="ngModel"
+      type="text"><br>
+      <button type='submit' [disabled]="!formData.valid">Add Quote</button>
+    </form>
+  </div> -->

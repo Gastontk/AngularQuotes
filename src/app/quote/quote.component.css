@@ -1,0 +1,56 @@
+#formDiv{
+	/*color: red;*/
+	width: 100%;
+	/*background-color: linen;*/
+	margin-left: 10px;
+	display: inline-block;
+	/*max-width: 1000px;*/
+
+}
+
+
+
+form{
+	display: inline-block;
+	padding: 5px;
+}
+
+.validations{
+	vertical-align: top;
+
+	display: inline-block;
+	max-width: 100%;
+	max-height: 400px;
+}
+.validationsLower{
+	display: block;
+	max-width: 400px;
+	max-height: 200px;
+
+}
+/*.validateAuthor{
+	vertical-align: top;
+
+}*/
+#quoteForm{
+ display: inline-block;
+
+}
+.red{
+	color: red;
+}
+
+.green{
+	color:green;
+}
+
+.inputButton{
+	margin-left: 141px;
+	/*margin-top: 10px*/
+}
+span{
+
+	font-size: 2em;
+}
+
+

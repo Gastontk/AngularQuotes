@@ -1,0 +1,38 @@
+<!-- <p style='color:red;'>
+  quotes-list works!
+</p> -->
+<!-- <button (click) = "testClickQuoteList('How much wood could a woodchuck chuck if a woodchuck could chuck wood?')">testClick</button> -->
+<div style = 'max-width: 700px;background-color:grey'>
+ <div  id ='messageDiv' >
+	<h2>Quotes:</h2>
+	<h1 style = 'color:red' *ngIf = 'noQuote'>{{noQuoteMessage}}</h1>
+	<h1 *ngIf = 'messageReady' style = 'color:orange;'> {{message}}</h1>
+ </div>
+
+	<div [ngClass]='{quotesDivsHolder:true,red:x.upVotes<-9,green:x.upVotes > 9}'    *ngFor = "let x of quotes | upvote" >
+			<div [ngClass]='{individualQuoteDiv:true, red:x.upVotes<-9}'>
+				<p>{{x.text}}</p><br>
+					<p style = 'margin-left:20%;'>--{{x.author}}</p>
+				
+			</div>
+			<div [ngClass]='{upVoteDiv:true, red:x.upVotes<-9}'>
+				<h3>Upvotes:</h3>
+				<h3 *ngIf='x.upVotes >0'>+{{x.upVotes}}</h3>
+				<h3 *ngIf='x.upVotes<1'>{{x.upVotes}}</h3>
+				<h3 *ngIf= 'x.upVotes > 9' style = 'color:white;'>Popular Post</h3>
+				<h5 *ngIf= 'x.upVotes < -9' style = 'color:white;'>Consider Deleting this unpopular post.</h5>
+			</div>
+			<div   [ngClass]='{buttonsDiv:true, red:x.upVotes<-9}'>
+					<button  (click)="btnPress($event,x)" class='btn btn-success' >vote UP</button> <br>
+					<button (click)="btnPressDown($event, x)"  class='btn btn-warning'>vote DOWN</button> <br>
+					<button (click)="btnPressDelete($event,x)"  class='btn btn-danger'>DELETE</button><br>
+
+			</div>
+
+
+
+	</div>
+
+
+
+</div>

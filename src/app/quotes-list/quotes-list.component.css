@@ -1,0 +1,89 @@
+.quotesDivsHolder{
+	border: solid black 1px;
+	display: inline-block;
+	width: 100%;
+	max-width: 600px;
+	background-color:#c9d6ea ;
+	height:160px;
+	margin-left: 100px;
+	margin-bottom: 10px;
+/*d3af8d */
+/*# pea soup   bcb600*/
+/*lightblue/steel c9d6ea*/
+}
+#messageDiv{
+	height: 160px;
+
+}
+
+.individualQuoteDiv{
+	/*border: solid green 1px;*/
+	display: inline-block;
+	height: 100%;
+	width:55%;
+	overflow:scroll;
+	vertical-align: top;
+	margin-left: 3px;
+
+	
+}
+
+.upVoteDiv{
+	/*border: solid red 1px;*/
+	display: inline-block;
+	width:25%;
+	/*height: 100%;*/
+	text-align: center;
+	/*margin-top: 0px;*/
+
+}
+
+.buttonsDiv{
+	/*border: solid blue 1px;*/
+	display: inline-block;
+	width: 17%;
+	/*margin-bottom: 0px;*/
+	/*text-align: top;*/
+	vertical-align: top;
+	height: 60%;
+	margin-top:10px;
+	margin-bottom:5px;
+	/*margin-top: -100px;*/
+	
+}
+
+button{
+	display: block;
+	width: 100%;
+	/*margin-bottom: 6px;*/
+	/*margin-top: 2px;*/
+	margin: 0px;
+	/*text-align: top;*/
+	/*vertical-align: top;*/
+}
+
+
+/*Testing color for popularity*/
+
+.blue{
+
+	background-color: #9ebae5;
+}
+.red{
+	color: #;
+	/*665620 pinkish*/
+	background-color: pink;
+}
+.green{
+	background-color: #306622;
+	color: #f2a698;
+
+}
+ /*lighter green 8eb784*/
+
+/* lighter green a9ea9a*/
+/*ffbfbf*/
+
+
+
+
